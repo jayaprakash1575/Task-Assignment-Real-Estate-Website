@@ -1,0 +1,242 @@
+/* Contact View Styles */
+.contact-page {
+  padding-bottom: 6rem;
+}
+
+.contact-hero {
+  background: linear-gradient(135deg, #090e17 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 4rem 0 3.5rem 0;
+  border-bottom: 1px solid #334155;
+  margin-bottom: 3rem;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.contact-info-card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform var(--trans-base), box-shadow var(--trans-base);
+}
+
+.contact-info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-info-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: #eff6ff;
+  color: var(--color-accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.contact-info-text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Form and Office Layout */
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+.contact-form-card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* Office Locations List */
+.offices-card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.office-branch-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.office-branch-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.office-city {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 0.25rem;
+}
+
+.office-address {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* FAQ Accordion */
+.faq-section {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  cursor: pointer;
+  transition: color var(--trans-fast);
+}
+
+.faq-question-btn:hover {
+  color: var(--color-accent-blue);
+}
+
+.faq-answer-content {
+  padding-bottom: 1.25rem;
+  font-size: 0.925rem;
+  color: var(--color-text-body);
+  line-height: 1.7;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* ==========================================================================
+   CONTACT VIEW RESPONSIVE MEDIA QUERIES (DESKTOP, TABLET, MOBILE)
+   ========================================================================== */
+
+/* 1. Desktop (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .contact-info-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .contact-layout-grid {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+/* 2. Tablet Devices (min-width: 768px) and (max-width: 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-hero {
+    padding: 3rem 0 2.5rem 0;
+  }
+
+  .contact-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .faq-section {
+    padding: 2.5rem 1.75rem;
+  }
+}
+
+/* 3. Mobile Devices (max-width: 767px) */
+@media (max-width: 767px) {
+  .contact-hero {
+    padding: 2.5rem 0 2rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-info-card {
+    padding: 1.25rem;
+  }
+
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-form-card {
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .offices-card {
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .faq-section {
+    padding: 2rem 1rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .faq-question-btn {
+    font-size: 0.95rem;
+    padding: 1rem 0;
+  }
+}
+
+/* 4. Small Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .contact-form-card input,
+  .contact-form-card select,
+  .contact-form-card textarea {
+    font-size: 0.875rem;
+  }
+}

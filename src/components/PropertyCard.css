@@ -1,0 +1,300 @@
+/* Property Card Styles */
+.property-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-subtle);
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.property-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -8px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(194, 157, 89, 0.38);
+  border-color: rgba(194, 157, 89, 0.45);
+}
+
+/* Card Media Header */
+.property-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #e2e8f0;
+}
+
+.property-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.property-card:hover .property-card-img {
+  transform: scale(1.06);
+}
+
+/* Overlay gradient for contrast */
+.property-card-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.35) 0%, rgba(15, 23, 42, 0) 35%, rgba(15, 23, 42, 0.65) 100%);
+  pointer-events: none;
+}
+
+/* Badges floating on image */
+.property-card-badges {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  z-index: 10;
+}
+
+.property-card-actions {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.45rem;
+  z-index: 10;
+}
+
+.card-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-main);
+  cursor: pointer;
+  transition: all var(--trans-fast);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-action-btn:hover {
+  background-color: #ffffff;
+  transform: scale(1.08);
+}
+
+.card-action-btn.active-favorite {
+  color: #ef4444;
+  background-color: #ffffff;
+}
+
+.card-action-btn.active-compare {
+  color: var(--color-accent-blue);
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+/* Bottom overlay info on image */
+.property-card-media-bottom {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 10;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.property-card-price {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  letter-spacing: -0.01em;
+}
+
+.property-card-sqft-price {
+  font-size: 0.8rem;
+  color: #f1f5f9;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Card Content Body */
+.property-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.property-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+  min-height: 3.1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color var(--trans-fast);
+  cursor: pointer;
+}
+
+.property-card-title:hover {
+  color: var(--color-gold);
+}
+
+.property-card-address {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Specs Row */
+.property-card-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+  margin-bottom: 1rem;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.825rem;
+  color: var(--color-text-body);
+  font-weight: 500;
+}
+
+.spec-icon {
+  color: var(--color-accent-blue);
+  flex-shrink: 0;
+}
+
+/* Footer of the card */
+.property-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  gap: 0.75rem;
+}
+
+.property-type-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-surface);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.property-rera-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #15803d;
+  background-color: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.property-view-btn {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.property-view-btn:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   PROPERTY CARD RESPONSIVE MEDIA QUERIES (DESKTOP, TABLET, MOBILE)
+   ========================================================================== */
+
+/* 1. Desktop (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .property-card-list-view {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+  }
+}
+
+/* 2. Tablet Devices (min-width: 768px) and (max-width: 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .property-card-list-view {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+  }
+
+  .property-card-body {
+    padding: 1.15rem;
+  }
+}
+
+/* 3. Mobile Devices (max-width: 767px) */
+@media (max-width: 767px) {
+  .property-card-list-view {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .property-card-body {
+    padding: 1.1rem 1rem;
+  }
+
+  .property-card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-action-btn {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* 4. Small Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .property-card-media {
+    aspect-ratio: 16 / 11;
+  }
+
+  .property-card-price {
+    font-size: 1.25rem;
+  }
+
+  .property-card-specs {
+    gap: 0.25rem;
+  }
+
+  .spec-item {
+    font-size: 0.775rem;
+  }
+}
